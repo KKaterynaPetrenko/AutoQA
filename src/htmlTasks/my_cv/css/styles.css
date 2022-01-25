@@ -1,0 +1,201 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f7fa;
+  padding: 40px;
+}
+
+.container {
+  display: flex;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  box-shadow: 5px 8.66px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.left-side {
+  width: 370px;
+  background-color: #1e2939;
+  color: #fff;
+}
+
+.right-side {
+  width: 830px;
+  padding-left: 80px;
+  padding-right: 100px;
+  padding-top: 68px;
+}
+
+/* #left-side */
+.photo {
+  margin-bottom: 34px;
+}
+
+.contacts,
+.skills {
+  margin-bottom: 52px;
+}
+
+.contacts,
+.skills {
+  padding-left: 40px;
+}
+
+.contacts-title,
+.skills-title {
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.contacts-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.contacts-item {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.contacts-link {
+  color: #fff;
+  opacity: 0.6;
+  margin-left: 10px;
+}
+
+.contacts-link:hover {
+  opacity: 1;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-item {
+  font-size: 14px;
+  color: #fff;
+}
+.skills-item::before {
+  margin-right: 8px;
+  content: "\2022";
+  color: #ff6b08;
+  font-size: 18px;
+}
+
+/* #right-side */
+
+.bio {
+  margin-bottom: 48px;
+}
+
+.jobs,
+.education {
+  margin-bottom: 54px;
+}
+
+.jobs-title {
+  color: #2a2a2a;
+  font-size: 22px;
+  line-height: 24px;
+
+  margin-bottom: 20px;
+}
+
+.jobs-time,
+.education-time {
+  color: #828282;
+  font-size: 12px;
+  line-height: 2;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.experience-item {
+  color: #595959;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 7px;
+}
+
+/* #bio */
+.bio-title {
+  margin: -20px 0px 0px 0px;
+  font-size: 45px;
+  line-height: 1.978;
+  font-weight: bold;
+}
+
+.bio-title,
+.bio-occupation {
+  color: #2a2a2a;
+}
+
+.bio-occupation {
+  margin-top: 0;
+  margin-bottom: 38px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.bio-about {
+  font-size: 14px;
+  line-height: 1.714;
+}
+
+.bio-about {
+  color: #595959;
+  margin-bottom: 0;
+}
+
+/* #jobs */
+
+.jobs-title,
+.education-title {
+  color: #2a2a2a;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.jobs-occupation,
+.education-degree {
+  color: #2a2a2a;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.experience {
+  margin-top: 0;
+  margin-bottom: 28px;
+  padding-left: 14px;
+}
+
+/* #common */
+
+.accent {
+  color: #ff6b08;
+}
+
+/* animation */
+
+.photo:hover {
+  animation: swing 1s;
+  transform-origin: center;
+}
+
+/* Caption text */
+
+.text {
+  color: #2a2a2a;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(250, 250, 250, 0.8);
+}
