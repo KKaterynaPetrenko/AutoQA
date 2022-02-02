@@ -1,13 +1,11 @@
-
 <suite name="Group of group Suite" verbose="1">
     <test name="Group of group Test">
         <groups>
-            <define name="HappyPath">
-                <include name="searchResult" />
-                <include name="searchBy" />
+            <define name="NegativePath">
+                <include name="searchWithoutResult" />
             </define>
             <run>
-                <include name="HappyPath" />
+                <include name="NegativePath" />
             </run>
         </groups>
         <classes>

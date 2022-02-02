@@ -25,6 +25,8 @@
                     <!-- Suite testng xml file to consider for test execution -->
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>testng2.xml</suiteXmlFile>
+                        <suiteXmlFile>testng3.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

@@ -51,7 +51,7 @@ public class gmailHW{
     }
 
     @Test
-    public void sendEmailHP() throws InterruptedException {
+    public void sendEmailHP() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\petre\\Downloads\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.navigate().to("https://mail.google.com/");

@@ -6,10 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -22,16 +19,22 @@ public class assertHW {
 
     WebDriver driver;
 
-    @BeforeTest(alwaysRun = true)
+    @BeforeMethod(alwaysRun = true)
     public void actionsBefore() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\petre\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.navigate().to("https://dou.ua/search/");
     }
+
+    @AfterMethod(alwaysRun = true)
+    public void actionAfter() {
+        driver.close();
+    }
+
 
 
     @Test(groups= {"searchResult"})
     public void searchResultHasSearchText() {
-        driver = new ChromeDriver();
-        driver.navigate().to("https://dou.ua/search/");
         WebElement searchField = driver.findElement(By.xpath("//input[@class=\"gsc-input\"]"));
         String searchText = "QA";
         String textSame = "тестировщик";
@@ -50,7 +53,6 @@ public class assertHW {
         for (String text: stResults) {
             Assert.assertTrue(text.contains(searchText) | text.contains(textSame));
         }
-        driver.close();
     }
 
     @DataProvider
@@ -64,8 +66,6 @@ public class assertHW {
 
     @Test(dataProvider = "searchData",groups= {"searchResult"})
     public void misprint(String searchText) {
-        driver = new ChromeDriver();
-        driver.navigate().to("https://dou.ua/search/");
         WebElement searchField = driver.findElement(By.xpath("//input[@class=\"gsc-input\"]"));
         searchField.sendKeys(searchText);
         searchField.sendKeys(Keys.ENTER);
@@ -76,13 +76,10 @@ public class assertHW {
         String searchResult = firstResult.getText();
         String expectedTestResult = "QA";
         assertThat(searchResult, containsString(expectedTestResult));
-        driver.close();
     }
 
     @Test (groups= {"searchBy"})
     public void searchByEnter() {
-        driver = new ChromeDriver();
-        driver.navigate().to("https://dou.ua/search/");
         WebElement searchField = driver.findElement(By.xpath("//input[@class=\"gsc-input\"]"));
         String searchText = "QA";
         searchField.sendKeys(searchText);
@@ -91,13 +88,10 @@ public class assertHW {
         WebElement resultBlock = driver.findElement(By.xpath("//*[@class=\"gsc-webResult gsc-result\"]"));
 
         Assert.assertTrue(resultBlock.isDisplayed());
-        driver.close();
     }
 
     @Test (groups= {"searchBy"})
     public void searchByButton() {
-        driver = new ChromeDriver();
-        driver.navigate().to("https://dou.ua/search/");
         WebElement searchField = driver.findElement(By.xpath("//input[@class=\"gsc-input\"]"));
         String searchText = "QA";
         searchField.sendKeys(searchText);
@@ -107,15 +101,12 @@ public class assertHW {
         WebElement resultBlock = driver.findElement(By.xpath("//*[@class=\"gsc-webResult gsc-result\"]"));
 
         Assert.assertTrue(resultBlock.isDisplayed());
-        driver.close();
     }
 
 
 
     @Test (groups= {"searchWithoutResult"})
     public void negativeSearch() {
-        driver = new ChromeDriver();
-        driver.navigate().to("https://dou.ua/search/");
         WebElement searchField = driver.findElement(By.xpath("//input[@class=\"gsc-input\"]"));
         String searchText = "ацауыаыуапкв";
         searchField.sendKeys(searchText);
@@ -127,6 +118,5 @@ public class assertHW {
         WebElement messageCorrect = driver.findElement(By.xpath("//*[@class=\"gs-snippet\"]"));
 
         Assert.assertTrue(!resultBlock.isDisplayed() | messageCorrect.isDisplayed());
-        driver.close();
     }
 }
