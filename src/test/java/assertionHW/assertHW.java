@@ -60,7 +60,7 @@ public class assertHW {
         return new Object[][]{
                 {"qA"},
                 {"йф"},
-                {"QAmanual"},
+                {"Q A"},
         };
     }
 
