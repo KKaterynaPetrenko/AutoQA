@@ -33,7 +33,7 @@ public class assertHW {
 
 
 
-    @Test(groups= {"searchResult"})
+   /* @Test(groups= {"searchResult"})
     public void searchResultHasSearchText() {
         WebElement searchField = driver.findElement(By.xpath("//input[@class=\"gsc-input\"]"));
         String searchText = "QA";
@@ -55,11 +55,13 @@ public class assertHW {
         }
     }
 
+    */
+
     @DataProvider
     public Object [][] searchData() {
         return new Object[][]{
                 {"qA"},
-                {"йф"},
+                //{"йф"},
                 {"Q A"},
         };
     }
